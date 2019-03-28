@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BDD04974780A18C50A6AC92 /* Pods_DailyDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F50189E625172621FF8F7 /* Pods_DailyDiary.framework */; };
 		63CC33532243EFFE0069AD62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC33522243EFFE0069AD62 /* AppDelegate.swift */; };
 		63CC335A2243EFFE0069AD62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CC33592243EFFE0069AD62 /* Assets.xcassets */; };
 		63CC33682243EFFE0069AD62 /* DailyDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC33672243EFFE0069AD62 /* DailyDiaryTests.swift */; };
@@ -52,6 +53,8 @@
 		63CC33B7224676770069AD62 /* recreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC33B0224676760069AD62 /* recreatePasswordViewController.swift */; };
 		63CC33B8224676770069AD62 /* recreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC33B0224676760069AD62 /* recreatePasswordViewController.swift */; };
 		63CC33B9224676770069AD62 /* recreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC33B0224676760069AD62 /* recreatePasswordViewController.swift */; };
+		C99C44878E6B08C04E3CFC87 /* Pods_DailyDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7ECBAEAD30DE2BDB2F5ECF /* Pods_DailyDiaryTests.framework */; };
+		D865D55F45B2B1F3E55E61C6 /* Pods_DailyDiaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADF2F880F7C7BAA384CF731 /* Pods_DailyDiaryUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12EBE69E960F02F92909D8AC /* Pods-DailyDiaryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiaryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDiaryUITests/Pods-DailyDiaryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2083332AADE50C93AD2D02CD /* Pods-DailyDiaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiaryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDiaryTests/Pods-DailyDiaryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		29879B31C403089EA1A1EE41 /* Pods-DailyDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDiary/Pods-DailyDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		39E48B354E0598BB8833E7CD /* Pods-DailyDiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiaryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDiaryUITests/Pods-DailyDiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4A0F50189E625172621FF8F7 /* Pods_DailyDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ADF2F880F7C7BAA384CF731 /* Pods_DailyDiaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDiaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CC334F2243EFFD0069AD62 /* DailyDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CC33522243EFFE0069AD62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CC33592243EFFE0069AD62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +104,9 @@
 		63CC33AE224676760069AD62 /* forgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgetPasswordViewController.swift; sourceTree = "<group>"; };
 		63CC33AF224676760069AD62 /* confirmPINViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = confirmPINViewController.swift; sourceTree = "<group>"; };
 		63CC33B0224676760069AD62 /* recreatePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recreatePasswordViewController.swift; sourceTree = "<group>"; };
+		AC7ECBAEAD30DE2BDB2F5ECF /* Pods_DailyDiaryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDiaryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E875BE6FCD821704868F5F76 /* Pods-DailyDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDiary/Pods-DailyDiary.release.xcconfig"; sourceTree = "<group>"; };
+		ED86CF8C77F9A5DA85357FE0 /* Pods-DailyDiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiaryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDiaryTests/Pods-DailyDiaryTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BDD04974780A18C50A6AC92 /* Pods_DailyDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99C44878E6B08C04E3CFC87 /* Pods_DailyDiaryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,12 +130,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D865D55F45B2B1F3E55E61C6 /* Pods_DailyDiaryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45D29C9F3D90618D1F57A014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A0F50189E625172621FF8F7 /* Pods_DailyDiary.framework */,
+				AC7ECBAEAD30DE2BDB2F5ECF /* Pods_DailyDiaryTests.framework */,
+				4ADF2F880F7C7BAA384CF731 /* Pods_DailyDiaryUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		636974FD2247EF5B001DCE32 /* initializer */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +178,8 @@
 				63CC33662243EFFE0069AD62 /* DailyDiaryTests */,
 				63CC33712243EFFE0069AD62 /* DailyDiaryUITests */,
 				63CC33502243EFFD0069AD62 /* Products */,
+				DC2B7F714B51EC0340B76A91 /* Pods */,
+				45D29C9F3D90618D1F57A014 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +258,19 @@
 			path = "back up";
 			sourceTree = "<group>";
 		};
+		DC2B7F714B51EC0340B76A91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29879B31C403089EA1A1EE41 /* Pods-DailyDiary.debug.xcconfig */,
+				E875BE6FCD821704868F5F76 /* Pods-DailyDiary.release.xcconfig */,
+				2083332AADE50C93AD2D02CD /* Pods-DailyDiaryTests.debug.xcconfig */,
+				ED86CF8C77F9A5DA85357FE0 /* Pods-DailyDiaryTests.release.xcconfig */,
+				12EBE69E960F02F92909D8AC /* Pods-DailyDiaryUITests.debug.xcconfig */,
+				39E48B354E0598BB8833E7CD /* Pods-DailyDiaryUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63CC33772243EFFE0069AD62 /* Build configuration list for PBXNativeTarget "DailyDiary" */;
 			buildPhases = (
+				24530F459531526D6DF4872D /* [CP] Check Pods Manifest.lock */,
 				63CC334B2243EFFD0069AD62 /* Sources */,
 				63CC334C2243EFFD0069AD62 /* Frameworks */,
 				63CC334D2243EFFD0069AD62 /* Resources */,
+				7CCED6941212275B2AC82673 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +297,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63CC337A2243EFFE0069AD62 /* Build configuration list for PBXNativeTarget "DailyDiaryTests" */;
 			buildPhases = (
+				743855648DAC7D14EA451693 /* [CP] Check Pods Manifest.lock */,
 				63CC335F2243EFFE0069AD62 /* Sources */,
 				63CC33602243EFFE0069AD62 /* Frameworks */,
 				63CC33612243EFFE0069AD62 /* Resources */,
@@ -273,6 +316,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63CC337D2243EFFE0069AD62 /* Build configuration list for PBXNativeTarget "DailyDiaryUITests" */;
 			buildPhases = (
+				D30470612AD8EF1EC52845F4 /* [CP] Check Pods Manifest.lock */,
 				63CC336A2243EFFE0069AD62 /* Sources */,
 				63CC336B2243EFFE0069AD62 /* Frameworks */,
 				63CC336C2243EFFE0069AD62 /* Resources */,
@@ -363,6 +407,105 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24530F459531526D6DF4872D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyDiary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		743855648DAC7D14EA451693 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyDiaryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CCED6941212275B2AC82673 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DailyDiary/Pods-DailyDiary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyDiary/Pods-DailyDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D30470612AD8EF1EC52845F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyDiaryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63CC334B2243EFFD0069AD62 /* Sources */ = {
@@ -549,6 +692,7 @@
 		};
 		63CC33782243EFFE0069AD62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29879B31C403089EA1A1EE41 /* Pods-DailyDiary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -563,6 +707,7 @@
 		};
 		63CC33792243EFFE0069AD62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E875BE6FCD821704868F5F76 /* Pods-DailyDiary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -577,6 +722,7 @@
 		};
 		63CC337B2243EFFE0069AD62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2083332AADE50C93AD2D02CD /* Pods-DailyDiaryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -593,6 +739,7 @@
 		};
 		63CC337C2243EFFE0069AD62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED86CF8C77F9A5DA85357FE0 /* Pods-DailyDiaryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -609,6 +756,7 @@
 		};
 		63CC337E2243EFFE0069AD62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12EBE69E960F02F92909D8AC /* Pods-DailyDiaryUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,6 +772,7 @@
 		};
 		63CC337F2243EFFE0069AD62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39E48B354E0598BB8833E7CD /* Pods-DailyDiaryUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
