@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3BDD04974780A18C50A6AC92 /* Pods_DailyDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0F50189E625172621FF8F7 /* Pods_DailyDiary.framework */; };
+		633E80E7224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */; };
+		633E80E8224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */; };
+		633E80E9224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */; };
+		63706F92224EC656006AD15F /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706F91224EC656006AD15F /* Memory.swift */; };
+		63706F93224EC656006AD15F /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706F91224EC656006AD15F /* Memory.swift */; };
+		63706F94224EC656006AD15F /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706F91224EC656006AD15F /* Memory.swift */; };
 		63CC33532243EFFE0069AD62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC33522243EFFE0069AD62 /* AppDelegate.swift */; };
 		63CC335A2243EFFE0069AD62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CC33592243EFFE0069AD62 /* Assets.xcassets */; };
 		63CC33682243EFFE0069AD62 /* DailyDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC33672243EFFE0069AD62 /* DailyDiaryTests.swift */; };
@@ -81,6 +87,8 @@
 		39E48B354E0598BB8833E7CD /* Pods-DailyDiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiaryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDiaryUITests/Pods-DailyDiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A0F50189E625172621FF8F7 /* Pods_DailyDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADF2F880F7C7BAA384CF731 /* Pods_DailyDiaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDiaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		63706F91224EC656006AD15F /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		63CC334F2243EFFD0069AD62 /* DailyDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CC33522243EFFE0069AD62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CC33592243EFFE0069AD62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +158,6 @@
 		636974FD2247EF5B001DCE32 /* initializer */ = {
 			isa = PBXGroup;
 			children = (
-				63CC33522243EFFE0069AD62 /* AppDelegate.swift */,
 				63CC339E2243F2DA0069AD62 /* logInViewController.swift */,
 				63CC339C2243F2D90069AD62 /* registrationViewController.swift */,
 				63CC33AE224676760069AD62 /* forgetPasswordViewController.swift */,
@@ -234,6 +241,8 @@
 		63CC33A92243F3400069AD62 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				63CC33522243EFFE0069AD62 /* AppDelegate.swift */,
+				63706F91224EC656006AD15F /* Memory.swift */,
 				636974FD2247EF5B001DCE32 /* initializer */,
 				636974FE2247EF7D001DCE32 /* main */,
 			);
@@ -254,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				63CC335E2243EFFE0069AD62 /* Info.plist */,
+				633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */,
 			);
 			path = "back up";
 			sourceTree = "<group>";
@@ -383,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63CC338D2243F24F0069AD62 /* LaunchScreen.storyboard in Resources */,
+				633E80E7224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */,
 				63CC33812243F1F50069AD62 /* Main.storyboard in Resources */,
 				63CC335A2243EFFE0069AD62 /* Assets.xcassets in Resources */,
 			);
@@ -394,6 +405,7 @@
 			files = (
 				63CC33822243F1F50069AD62 /* Main.storyboard in Resources */,
 				63CC338E2243F24F0069AD62 /* LaunchScreen.storyboard in Resources */,
+				633E80E8224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +415,7 @@
 			files = (
 				63CC33832243F1F50069AD62 /* Main.storyboard in Resources */,
 				63CC338F2243F24F0069AD62 /* LaunchScreen.storyboard in Resources */,
+				633E80E9224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,15 +427,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DailyDiary-checkManifestLockResult.txt",
 			);
@@ -436,15 +445,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DailyDiaryTests-checkManifestLockResult.txt",
 			);
@@ -458,8 +463,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DailyDiary/Pods-DailyDiary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -469,8 +472,6 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -488,15 +489,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DailyDiaryUITests-checkManifestLockResult.txt",
 			);
@@ -523,6 +520,7 @@
 				63CC33B7224676770069AD62 /* recreatePasswordViewController.swift in Sources */,
 				63CC33992243F2D20069AD62 /* myMemoriesViewController.swift in Sources */,
 				63CC33912243F2CA0069AD62 /* showMemoryViewController.swift in Sources */,
+				63706F92224EC656006AD15F /* Memory.swift in Sources */,
 				63CC33892243F2270069AD62 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +539,7 @@
 				63CC33B8224676770069AD62 /* recreatePasswordViewController.swift in Sources */,
 				63CC33922243F2CA0069AD62 /* showMemoryViewController.swift in Sources */,
 				63CC33AB2243F34C0069AD62 /* AppDelegate.swift in Sources */,
+				63706F93224EC656006AD15F /* Memory.swift in Sources */,
 				63CC33B5224676770069AD62 /* confirmPINViewController.swift in Sources */,
 				63CC33B2224676770069AD62 /* forgetPasswordViewController.swift in Sources */,
 				63CC338A2243F2270069AD62 /* DesignableButton.swift in Sources */,
@@ -561,6 +560,7 @@
 				63CC33B9224676770069AD62 /* recreatePasswordViewController.swift in Sources */,
 				63CC33932243F2CA0069AD62 /* showMemoryViewController.swift in Sources */,
 				63CC33AA2243F34C0069AD62 /* AppDelegate.swift in Sources */,
+				63706F94224EC656006AD15F /* Memory.swift in Sources */,
 				63CC33B6224676770069AD62 /* confirmPINViewController.swift in Sources */,
 				63CC33B3224676770069AD62 /* forgetPasswordViewController.swift in Sources */,
 				63CC338B2243F2270069AD62 /* DesignableButton.swift in Sources */,

@@ -1,4 +1,6 @@
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class registrationViewController: UIViewController {
 
@@ -8,6 +10,7 @@ class registrationViewController: UIViewController {
     var email = ""
     var password = ""
     var repeatPass = ""
+    var image = ""
     
     
     // outlets
@@ -24,8 +27,9 @@ class registrationViewController: UIViewController {
     
     @IBAction func registerBtnPressed(_ sender: UIButton) {
         
+        SVProgressHUD.show()
         
-        userName=userEmailTextField.text!
+        userName=userNameTextField.text!
         email=userEmailTextField.text!
         password=userPasswordTextField.text!
         repeatPass=userRepeatPasswordTextfield.text!
@@ -47,18 +51,48 @@ class registrationViewController: UIViewController {
             myAlert.addAction(okAction)
             self.present(myAlert, animated:true, completion:nil)
         }
+        else if (isValidPassword(testStr: password) == false)
+        {
+            let myAlert = UIAlertController(title: "Alert", message: "Your password should have at least one uppercase ,at least one digit,at least one lowercase, 8 characters total", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            myAlert.addAction(okAction)
+            self.present(myAlert, animated:true, completion:nil)
+        }
+        else if (isValidEmail(email: email) == false)
+        {
+            let myAlert = UIAlertController(title: "Alert", message: "It's not a valid email", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            myAlert.addAction(okAction)
+            self.present(myAlert, animated:true, completion:nil)
+        }
             
         else
         {
-            let myAlert = UIAlertController(title: "Congratulations", message: "Regestration successfull", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){action in
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "myMemoriesViewController")as! myMemoriesViewController
-                self.present(vc, animated: true, completion: nil)
+             let usersDatabase = Database.database().reference().child("user")
+            let userArray = ["userName":userName,"email":email,"password":password,"image":image]
+            usersDatabase.childByAutoId().setValue(userArray)
+            {
+                (error,refernce) in
                 
+                if error != nil {
+                    print(error!)
+                }
+                else {print("done")}
             }
-            myAlert.addAction(okAction)
-            self.present(myAlert, animated:true, completion:nil)
+            Auth.auth().createUser(withEmail: email, password: password){ (user, error) in
+                
+                if error != nil {print(error!)}
+                else {let myAlert = UIAlertController(title: "Congratulations", message: "Regestration successfull", preferredStyle: UIAlertControllerStyle.alert)
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){action in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "myMemoriesViewController")as! myMemoriesViewController
+                        SVProgressHUD.dismiss()
+                        self.present(vc, animated: true, completion: nil)
+                        
+                    }
+                    myAlert.addAction(okAction)
+                    self.present(myAlert, animated:true, completion:nil)}
+            }
         }
         
         
@@ -85,6 +119,26 @@ class registrationViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
        
+    }
+    
+    func isValidEmail(email:String)->Bool
+    {
+        guard email != nil else { return false }
+        let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let pred = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return pred.evaluate(with: email)
+    }
+    
+    func isValidPassword(testStr:String?) -> Bool {
+        guard testStr != nil else { return false }
+        
+        // at least one uppercase,
+        // at least one digit
+        // at least one lowercase
+        // 8 characters total
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}")
+        return passwordTest.evaluate(with: testStr)
     }
     
 }

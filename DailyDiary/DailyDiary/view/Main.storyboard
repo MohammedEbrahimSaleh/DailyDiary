@@ -441,7 +441,7 @@
                                 <color key="tintColor" red="0.5080107868" green="0.46081415910000001" blue="0.27885375350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.5080107868" green="0.46081415910000001" blue="0.27885375350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
                                 </userDefinedRuntimeAttributes>
@@ -519,7 +519,7 @@ EFVzZXIgbmFtZQ
                                 <color key="tintColor" red="0.90704405310000003" green="0.83664214609999998" blue="0.53166347739999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
                                 </userDefinedRuntimeAttributes>
@@ -531,7 +531,7 @@ EFVzZXIgbmFtZQ
                                 <color key="tintColor" red="0.90704405310000003" green="0.83664214609999998" blue="0.53166347739999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password"/>
                                 </userDefinedRuntimeAttributes>
@@ -560,7 +560,7 @@ EFVzZXIgbmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aC4-bP-GbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-252" y="-125"/>
+            <point key="canvasLocation" x="-348" y="-125"/>
         </scene>
         <!--show a memory-->
         <scene sceneID="v5Z-iL-Neh">

@@ -25,7 +25,7 @@ class showMemoryViewController: UIViewController {
         
         let myAlert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this memeory ?", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Ok", style: .default){ action in
-            myMemoriesArray.memoryArray.remove(at: self.index)
+           // myMemoriesArray.remove(at: self.index)
             self.dismiss(animated: true, completion: nil)
         }
         myAlert.addAction(okAction)
@@ -36,20 +36,20 @@ class showMemoryViewController: UIViewController {
     }
  
     @IBAction func editBtnPressed(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier:"addMemoryViewController") as!addMemoryViewController
-        vc.initator = "vc2" 
-        vc.index = self.index
-        vc.memoryTitle = myMemoriesArray.memoryArray[self.index].memoryTitle
-        vc.memoryBody = myMemoriesArray.memoryArray[self.index].memoryBody
-        
-        
-        self.present(vc, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier:"addMemoryViewController") as!addMemoryViewController
+//        vc.initator = "vc2"
+//        vc.index = self.index
+//        vc.memoryTitle = myMemoriesArray[self.index].memoryTitle
+//        vc.memoryBody = myMemoriesArray[self.index].memoryBody
+//
+//
+//        self.present(vc, animated: true, completion: nil)
 
     }
     override func viewDidLoad() {
-        memoryTilteTextField.text = myMemoriesArray.memoryArray[index].memoryTitle
-        memoryBodyTextView.text = myMemoriesArray.memoryArray[index].memoryBody
+//        memoryTilteTextField.text = myMemoriesArray[index].memoryTitle
+//        memoryBodyTextView.text = myMemoriesArray[index].memoryBody
         super.viewDidLoad()
 
         memoryTilteTextField.allowsEditingTextAttributes = false

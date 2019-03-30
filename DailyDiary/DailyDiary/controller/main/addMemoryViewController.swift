@@ -4,6 +4,8 @@
 //  Copyright © 2019 IOS. All rights reserved.
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class addMemoryViewController: UIViewController{
 
@@ -15,7 +17,7 @@ class addMemoryViewController: UIViewController{
     let date = Date()
     let formatter = DateFormatter()
     var initator = ""
-     var index : Int = 0
+    var index : Int = 0
     
     //outlets
     
@@ -25,21 +27,35 @@ class addMemoryViewController: UIViewController{
     ////actions
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
+        titleTextField.allowsEditingTextAttributes = false
+        memoryBodyTextField.allowsEditingTextAttributes = false
+        SVProgressHUD.show()
+       self.memoryTitle = titleTextField.text!
+        self.memoryBody = memoryBodyTextField.text!
         
-        memoryTitle = titleTextField.text!
-        memoryBody = memoryBodyTextField.text!
-//        memoryDate = Date.init(timeIntervalSinceNow: .)
-        let memory : memorymodel = memorymodel.init(memoryTitle:memoryTitle,memoryDate:memoryDate,memoryBody:memoryBody )
-        if initator=="vc2"
-        { myMemoriesArray.memoryArray.remove(at: index)}
-        myMemoriesArray.memoryArray.append(memory)
-       
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier:"myMemoriesViewController") as!myMemoriesViewController
+        let memoryDatabase = Database.database().reference().child("memory")
         
-        self.present(vc, animated: true, completion: nil)
+        let memoriesDictionary = ["memoryTitle":memoryTitle,"memoryBody":memoryBody,"memoryDate":memoryDate]
+        memoryDatabase.childByAutoId().setValue(memoriesDictionary){
+            (error,refernce) in
+            
+            if error != nil {
+                print(error!)
+            }
+            else {let myAlert = UIAlertController(title: "Done", message: "Memory is saved ", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){action in
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier:"myMemoriesViewController") as!myMemoriesViewController
+                    SVProgressHUD.dismiss()
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+                myAlert.addAction(okAction)
+                self.present(myAlert, animated:true, completion:nil)}
+            }
+        }
         
-    }
+    
     
     
     @IBAction func cancelBtnPressed(_ sender: UIButton) {
@@ -54,6 +70,8 @@ class addMemoryViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        titleTextField.allowsEditingTextAttributes = true
+        memoryBodyTextField.allowsEditingTextAttributes = true
         titleTextField.text = memoryTitle
         memoryBodyTextField.text = memoryBody
         formatter.dateFormat = "dd/MM/yyyy"

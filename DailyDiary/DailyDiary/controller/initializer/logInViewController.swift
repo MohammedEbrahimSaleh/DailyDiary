@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import SVProgressHUD
 class logInViewController: UIViewController {
 
     // variables
@@ -23,7 +24,7 @@ class logInViewController: UIViewController {
     
     // actions
     @IBAction func logInBtnPressed(_ sender: UIButton) {
-        
+        SVProgressHUD.show()
         email=userEmailTextField.text!
         password=userPasswordTextField.text!
         
@@ -37,18 +38,16 @@ class logInViewController: UIViewController {
             displayMyAlertMessage(alertTitle: "Alert", userMessage: "Please enter your Password if you forgot it press forget password button")
             return;
         }
-        if email=="1"&&password=="1"
-        {
+        else{
+        Auth.auth().signIn(withEmail: email, password: password) { (user,error) in if error != nil { self.displayMyAlertMessage(alertTitle: "Alert", userMessage: "Wrong  email or passwoed") }
+        else{SVProgressHUD.dismiss()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "myMemoriesViewController")as! myMemoriesViewController
-            self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)}
+             }
         }
-        else
-        {
-            displayMyAlertMessage(alertTitle: "Alert", userMessage: "Wrong  email or passwoed")
-        }
-        
-        
+       
+   
     }
     
     @IBAction func forgetPasswordBtnPressed(_ sender: UIButton) {

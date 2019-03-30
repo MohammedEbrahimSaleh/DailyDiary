@@ -7,32 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
-// a structure for the array model we need
-struct ModelArray{
-    var memoryArray:[memorymodel]
-    init(memoryArray:[memorymodel])
-    {
-        self.memoryArray=memoryArray
-    }
-}
-// the structure for every elemnt inside the array we need
-struct memorymodel {
-    var memoryTitle = ""
-    var memoryBody = ""
-    var memoryDate = ""
-    init(memoryTitle:String,memoryDate:String,memoryBody:String)
-    {
-        self.memoryBody=memoryBody
-        self.memoryDate=memoryDate
-        self.memoryTitle=memoryTitle
-    }
-}
-// an actuall array for memeories
-var  myMemoriesArray : ModelArray = ModelArray.init(memoryArray: [])
 
 class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,DataCollection {
-    
+    // variables
+    var  myMemoriesArray : [Memory] = [Memory]()
     // outlets
     @IBOutlet weak var myMemoriesTable: UITableView!
     
@@ -46,29 +27,39 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     
     @IBAction func logOutBtnPressed(_ sender: UIBarButtonItem) {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let myAlert = UIAlertController(title: "log out", message: "Are you sure you want to log out ?", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Ok", style: .default){ action in
+            SVProgressHUD.show()
+            do {
+               try Auth.auth().signOut()
+            }
+            catch{
+                print("Error in signing out")
+            }
            let vc = storyboard.instantiateViewController(withIdentifier: "logInViewController") as! logInViewController
+            SVProgressHUD.dismiss()
             self.present(vc, animated: true, completion: nil)
         }
         myAlert.addAction(okAction)
         let cancelAction = UIAlertAction(title: "cancel", style: .cancel){ action in }
         myAlert.addAction(cancelAction)
         self.present(myAlert, animated: true, completion: nil)
+        
     
     }
     
     // table functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myMemoriesArray.memoryArray.count
+        return myMemoriesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myMemoriesTable.dequeueReusableCell(withIdentifier: "memoryCell", for: indexPath) as! memoriesTableViewCell
-        cell.memoryDate.text = myMemoriesArray.memoryArray[indexPath.row].memoryDate
-        cell.memoryTitle.text = myMemoriesArray.memoryArray[indexPath.row].memoryTitle
+        cell.memoryDate.text = myMemoriesArray[indexPath.row].memoryDate
+        cell.memoryTitle.text = myMemoriesArray[indexPath.row].memoryTitle
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,6 +75,7 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
         super.viewDidLoad()
         myMemoriesTable.delegate = self
         myMemoriesTable.dataSource = self
+        retriveMemories()
         myMemoriesTable.reloadData()
     }
     
@@ -94,20 +86,40 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier:"addMemoryViewController") as!addMemoryViewController
         vc.initator="vc2"
-        vc.memoryTitle = myMemoriesArray.memoryArray[index].memoryTitle
-        vc.memoryBody = myMemoriesArray.memoryArray[index].memoryBody
-        vc.memoryDate = myMemoriesArray.memoryArray[index].memoryDate
-        myMemoriesArray.memoryArray.remove(at: index)
+        vc.memoryTitle = myMemoriesArray[index].memoryTitle
+        vc.memoryBody = myMemoriesArray[index].memoryBody
+        vc.memoryDate = myMemoriesArray[index].memoryDate
+        myMemoriesArray.remove(at: index)
         self.present(vc, animated: true, completion: nil)
     }
     
     func deleteCell(index: Int) {
-        myMemoriesArray.memoryArray.remove(at: index)
+        myMemoriesArray.remove(at: index)
     }
     
     // to reload data ater appear again
     override func viewWillAppear(_ animated: Bool) {
         myMemoriesTable.reloadData()
+    }
+    // funcion to retrive messages from data base
+    func retriveMemories(){
+        let memoryDB = Database.database().reference().child("memory")
+        memoryDB.observe(.childAdded, with: { (snapshot) in
+           let snapshotValue =  snapshot.value as! Dictionary<String,String>
+            let memoryTitle = snapshotValue["memoryTitle"]!
+            let memoryBody = snapshotValue["memoryBody"]!
+            let memoryDate = snapshotValue["memoryDate"]!
+            
+            let oneMemory = Memory()
+            oneMemory.memoryTitle = memoryTitle
+            oneMemory.memoryBody = memoryBody
+            oneMemory.memoryDate = memoryDate
+            
+           self.myMemoriesArray.append(oneMemory)
+            self.myMemoriesTable.reloadData()
+            
+        })
+        
     }
 }
 
