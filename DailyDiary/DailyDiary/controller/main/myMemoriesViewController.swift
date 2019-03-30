@@ -26,30 +26,13 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
         self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func logOutBtnPressed(_ sender: UIBarButtonItem) {
+    @IBAction func myProfilePageBtnPressed(_ sender: UIBarButtonItem) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let myAlert = UIAlertController(title: "log out", message: "Are you sure you want to log out ?", preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default){ action in
-            SVProgressHUD.show()
-            do {
-               try Auth.auth().signOut()
-            }
-            catch{
-                print("Error in signing out")
-            }
-           let vc = storyboard.instantiateViewController(withIdentifier: "logInViewController") as! logInViewController
-            SVProgressHUD.dismiss()
-            self.present(vc, animated: true, completion: nil)
-        }
-        myAlert.addAction(okAction)
-        let cancelAction = UIAlertAction(title: "cancel", style: .cancel){ action in }
-        myAlert.addAction(cancelAction)
-        self.present(myAlert, animated: true, completion: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier:"myProfileViewController") as!myProfileViewController
+        self.present(vc, animated: true, completion: nil)
         
-    
     }
-    
     // table functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,7 +86,7 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     // funcion to retrive messages from data base
     func retriveMemories(){
-        let memoryDB = Database.database().reference().child("memory")
+        let memoryDB = Database.database().reference().child("memory").child((Auth.auth().currentUser?.uid)!)
         memoryDB.observe(.childAdded, with: { (snapshot) in
            let snapshotValue =  snapshot.value as! Dictionary<String,String>
             let memoryTitle = snapshotValue["memoryTitle"]!

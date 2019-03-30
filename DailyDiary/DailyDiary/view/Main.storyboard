@@ -132,9 +132,9 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="My memories" id="9VP-YP-auv">
-                                        <barButtonItem key="leftBarButtonItem" title="Log out" id="5dQ-wA-BWo">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="sY3-V3-wZl">
                                             <connections>
-                                                <action selector="logOutBtnPressed:" destination="ped-6X-wEZ" id="Oh5-cz-03U"/>
+                                                <action selector="myProfilePageBtnPressed:" destination="ped-6X-wEZ" id="jhK-R1-2fm"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="A0M-cL-krK">
@@ -560,7 +560,7 @@ EFVzZXIgbmFtZQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aC4-bP-GbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="-125"/>
+            <point key="canvasLocation" x="-278" y="-125"/>
         </scene>
         <!--show a memory-->
         <scene sceneID="v5Z-iL-Neh">
@@ -632,9 +632,83 @@ EFVzZXIgbmFtZQ
             </objects>
             <point key="canvasLocation" x="-194.40000000000001" y="635.53223388305855"/>
         </scene>
+        <!--My Profile page-->
+        <scene sceneID="dH1-7x-aJu">
+            <objects>
+                <viewController storyboardIdentifier="myProfileViewController" title="My Profile page" id="j6a-P3-USt" customClass="myProfileViewController" customModule="DailyDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kUJ-5N-lUo"/>
+                        <viewControllerLayoutGuide type="bottom" id="8tM-Hc-sV5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jLC-aj-gFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="pKg-3q-EAh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="syq-zF-X2c">
+                                <rect key="frame" x="112" y="158" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAp-oT-yBE" customClass="DesignableButton" customModule="DailyDiary" customModuleProvider="target">
+                                <rect key="frame" x="16" y="431" width="343" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.92574198070000002" blue="0.59696461190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Update Password">
+                                    <color key="titleColor" red="1" green="0.92574198070000002" blue="0.59696461190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="updatePasswordBtnPressed:" destination="j6a-P3-USt" eventType="touchUpInside" id="OWC-fw-dyH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-8a-qYa" customClass="DesignableButton" customModule="DailyDiary" customModuleProvider="target">
+                                <rect key="frame" x="16" y="375" width="343" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.92574198070000002" blue="0.59696461190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Update user Name">
+                                    <color key="titleColor" red="1" green="0.92574198070000002" blue="0.59696461190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateUserNameBtnPressed:" destination="j6a-P3-USt" eventType="touchUpInside" id="zhB-AK-IgL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSw-4b-pQK">
+                                <rect key="frame" x="112" y="323" width="150" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.92574198070000002" blue="0.59696461190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akZ-Y8-D58" customClass="DesignableButton" customModule="DailyDiary" customModuleProvider="target">
+                                <rect key="frame" x="16" y="487" width="343" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.92574198070000002" blue="0.59696461190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.92574198070000002" blue="0.59696461190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutBtnPressed:" destination="j6a-P3-USt" eventType="touchUpInside" id="1JW-mi-P9d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72277766470000004" green="0.65358126159999996" blue="0.3906321526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="pKg-3q-EAh" id="NqZ-sc-Ryx"/>
+                        <outlet property="profilePicture" destination="syq-zF-X2c" id="H9D-Yk-QUn"/>
+                        <outlet property="userNameLbl" destination="BSw-4b-pQK" id="8pu-7v-ctr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yM-lC-Ow8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568.79999999999995" y="636.4317841079461"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Password" width="500" height="500"/>
+        <image name="background" width="275" height="183"/>
         <image name="diary" width="48" height="48"/>
         <image name="down" width="20" height="14"/>
         <image name="email" width="100" height="100"/>

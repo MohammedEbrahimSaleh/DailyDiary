@@ -33,7 +33,7 @@ class addMemoryViewController: UIViewController{
        self.memoryTitle = titleTextField.text!
         self.memoryBody = memoryBodyTextField.text!
         
-        let memoryDatabase = Database.database().reference().child("memory")
+        let memoryDatabase = Database.database().reference().child("memory").child((Auth.auth().currentUser?.uid)!)
         
         let memoriesDictionary = ["memoryTitle":memoryTitle,"memoryBody":memoryBody,"memoryDate":memoryDate]
         memoryDatabase.childByAutoId().setValue(memoriesDictionary){

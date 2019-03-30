@@ -11,6 +11,9 @@
 		633E80E7224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */; };
 		633E80E8224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */; };
 		633E80E9224E64AB0013F6C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */; };
+		635A7500224FC359009B77F8 /* myProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A74FF224FC359009B77F8 /* myProfileViewController.swift */; };
+		635A7501224FC359009B77F8 /* myProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A74FF224FC359009B77F8 /* myProfileViewController.swift */; };
+		635A7502224FC359009B77F8 /* myProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A74FF224FC359009B77F8 /* myProfileViewController.swift */; };
 		63706F92224EC656006AD15F /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706F91224EC656006AD15F /* Memory.swift */; };
 		63706F93224EC656006AD15F /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706F91224EC656006AD15F /* Memory.swift */; };
 		63706F94224EC656006AD15F /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63706F91224EC656006AD15F /* Memory.swift */; };
@@ -88,6 +91,7 @@
 		4A0F50189E625172621FF8F7 /* Pods_DailyDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADF2F880F7C7BAA384CF731 /* Pods_DailyDiaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDiaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		633E80E6224E64AB0013F6C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		635A74FF224FC359009B77F8 /* myProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProfileViewController.swift; sourceTree = "<group>"; };
 		63706F91224EC656006AD15F /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		63CC334F2243EFFD0069AD62 /* DailyDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CC33522243EFFE0069AD62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				63CC33952243F2D10069AD62 /* myMemoriesViewController.swift */,
 				63CC33942243F2D10069AD62 /* memoriesTableViewCell.swift */,
 				63CC33902243F2C90069AD62 /* showMemoryViewController.swift */,
+				635A74FF224FC359009B77F8 /* myProfileViewController.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				63CC33992243F2D20069AD62 /* myMemoriesViewController.swift in Sources */,
 				63CC33912243F2CA0069AD62 /* showMemoryViewController.swift in Sources */,
 				63706F92224EC656006AD15F /* Memory.swift in Sources */,
+				635A7500224FC359009B77F8 /* myProfileViewController.swift in Sources */,
 				63CC33892243F2270069AD62 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +547,7 @@
 				63CC33AB2243F34C0069AD62 /* AppDelegate.swift in Sources */,
 				63706F93224EC656006AD15F /* Memory.swift in Sources */,
 				63CC33B5224676770069AD62 /* confirmPINViewController.swift in Sources */,
+				635A7501224FC359009B77F8 /* myProfileViewController.swift in Sources */,
 				63CC33B2224676770069AD62 /* forgetPasswordViewController.swift in Sources */,
 				63CC338A2243F2270069AD62 /* DesignableButton.swift in Sources */,
 			);
@@ -562,6 +569,7 @@
 				63CC33AA2243F34C0069AD62 /* AppDelegate.swift in Sources */,
 				63706F94224EC656006AD15F /* Memory.swift in Sources */,
 				63CC33B6224676770069AD62 /* confirmPINViewController.swift in Sources */,
+				635A7502224FC359009B77F8 /* myProfileViewController.swift in Sources */,
 				63CC33B3224676770069AD62 /* forgetPasswordViewController.swift in Sources */,
 				63CC338B2243F2270069AD62 /* DesignableButton.swift in Sources */,
 			);

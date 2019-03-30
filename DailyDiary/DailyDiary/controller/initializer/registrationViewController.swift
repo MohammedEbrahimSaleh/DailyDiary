@@ -68,8 +68,8 @@ class registrationViewController: UIViewController {
             
         else
         {
-             let usersDatabase = Database.database().reference().child("user")
-            let userArray = ["userName":userName,"email":email,"password":password,"image":image]
+            let usersDatabase = Database.database().reference().child("user")
+            let userArray = ["userName":userName,"email":email,"image":image]
             usersDatabase.childByAutoId().setValue(userArray)
             {
                 (error,refernce) in
