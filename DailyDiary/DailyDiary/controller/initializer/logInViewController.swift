@@ -39,7 +39,8 @@ class logInViewController: UIViewController {
             return;
         }
         else{
-        Auth.auth().signIn(withEmail: email, password: password) { (user,error) in if error != nil { self.displayMyAlertMessage(alertTitle: "Alert", userMessage: "Wrong  email or passwoed") }
+        Auth.auth().signIn(withEmail: email, password: password) { (user,error) in if error != nil { self.displayMyAlertMessage(alertTitle: "Alert", userMessage: "Wrong  email or passwoed")
+            SVProgressHUD.dismiss() }
         else{SVProgressHUD.dismiss()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "myMemoriesViewController")as! myMemoriesViewController

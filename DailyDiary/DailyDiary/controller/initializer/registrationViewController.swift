@@ -10,7 +10,8 @@ class registrationViewController: UIViewController {
     var email = ""
     var password = ""
     var repeatPass = ""
-    var image = ""
+    var ProfilePhoto = ""
+    
     
     
     // outlets
@@ -68,17 +69,6 @@ class registrationViewController: UIViewController {
             
         else
         {
-            let usersDatabase = Database.database().reference().child("user")
-            let userArray = ["userName":userName,"email":email,"image":image]
-            usersDatabase.childByAutoId().setValue(userArray)
-            {
-                (error,refernce) in
-                
-                if error != nil {
-                    print(error!)
-                }
-                else {print("done")}
-            }
             Auth.auth().createUser(withEmail: email, password: password){ (user, error) in
                 
                 if error != nil {print(error!)}
@@ -91,7 +81,20 @@ class registrationViewController: UIViewController {
                         
                     }
                     myAlert.addAction(okAction)
-                    self.present(myAlert, animated:true, completion:nil)}
+                    self.present(myAlert, animated:true, completion:nil)
+                    //create the user row in the user table in the database
+                    let usersDatabase = Database.database().reference().child("user")
+                    let userDictionary = ["userName":self.userName,"email":self.email,"password":self.password,"ProfilePhoto":self.ProfilePhoto]
+                    usersDatabase.child((Auth.auth().currentUser?.uid)!).setValue(userDictionary)
+                    {
+                        (error,refernce) in
+                        
+                        if error != nil {
+                            print(error!)
+                        }
+                        else {print("done")}
+                    }
+                }
             }
         }
         
@@ -123,7 +126,7 @@ class registrationViewController: UIViewController {
     
     func isValidEmail(email:String)->Bool
     {
-        guard email != nil else { return false }
+//        guard email != nil else { return false }
         let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         
         let pred = NSPredicate(format:"SELF MATCHES %@", regEx)

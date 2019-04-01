@@ -49,6 +49,8 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier:"showMemoryViewController") as!showMemoryViewController
         vc.index = indexPath.row
+        vc.memoryTitle = myMemoriesArray[indexPath.row].memoryTitle
+        vc.memoryBody = myMemoriesArray[indexPath.row].memoryBody
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -88,7 +90,7 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
     func retriveMemories(){
         let memoryDB = Database.database().reference().child("memory").child((Auth.auth().currentUser?.uid)!)
         memoryDB.observe(.childAdded, with: { (snapshot) in
-           let snapshotValue =  snapshot.value as! Dictionary<String,String>
+            let snapshotValue =  snapshot.value as!  Dictionary<String,String>
             let memoryTitle = snapshotValue["memoryTitle"]!
             let memoryBody = snapshotValue["memoryBody"]!
             let memoryDate = snapshotValue["memoryDate"]!
