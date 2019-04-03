@@ -644,9 +644,10 @@ EFVzZXIgbmFtZQ
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="syq-zF-X2c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image missing" translatesAutoresizingMaskIntoConstraints="NO" id="syq-zF-X2c">
                                 <rect key="frame" x="112" y="62" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.5080107868" green="0.46081415910000001" blue="0.27885375350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-8a-qYa" customClass="DesignableButton" customModule="DailyDiary" customModuleProvider="target">
                                 <rect key="frame" x="16" y="340" width="343" height="48"/>
@@ -754,9 +755,10 @@ EFVzZXIgbmFtZQ
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="HoQ-dq-dbA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image missing" translatesAutoresizingMaskIntoConstraints="NO" id="HoQ-dq-dbA">
                                 <rect key="frame" x="112" y="20" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.5080107868" green="0.46081415910000001" blue="0.27885375350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeM-x8-DEa" customClass="DesignableTextField" customModule="DailyDiary" customModuleProvider="target">
                                 <rect key="frame" x="16" y="269" width="343" height="30"/>
@@ -840,6 +842,16 @@ EFVzZXIgbmFtZQ
                                 <color key="textColor" red="0.90704405310000003" green="0.83664214609999998" blue="0.53166347739999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58U-4c-2MT">
+                                <rect key="frame" x="8" y="28" width="51" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.90704405310000003" green="0.83664214609999998" blue="0.53166347739999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="down"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="j6a-P3-USt" eventType="touchUpInside" id="GQm-vn-zmC"/>
+                                    <action selector="backBtnPressed:" destination="Xf2-oF-9mg" eventType="touchUpInside" id="ee7-r3-6Sa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.72277766470000004" green="0.65358126159999996" blue="0.3906321526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -859,10 +871,10 @@ EFVzZXIgbmFtZQ
     </scenes>
     <resources>
         <image name="Password" width="500" height="500"/>
-        <image name="background" width="275" height="183"/>
         <image name="diary" width="48" height="48"/>
         <image name="down" width="20" height="14"/>
         <image name="email" width="100" height="100"/>
         <image name="first name" width="60" height="60"/>
+        <image name="image missing" width="128" height="128"/>
     </resources>
 </document>

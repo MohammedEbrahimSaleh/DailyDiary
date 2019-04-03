@@ -11,7 +11,7 @@ import Firebase
 import SVProgressHUD
 
 
-class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,DataCollection {
+class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     // variables
     var  myMemoriesArray : [Memory] = [Memory]()
     // outlets
@@ -49,6 +49,7 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier:"showMemoryViewController") as!showMemoryViewController
         vc.index = indexPath.row
+        vc.memoryID = myMemoriesArray[indexPath.row].memoryID
         vc.memoryTitle = myMemoriesArray[indexPath.row].memoryTitle
         vc.memoryBody = myMemoriesArray[indexPath.row].memoryBody
         self.present(vc, animated: true, completion: nil)
@@ -64,24 +65,7 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
         myMemoriesTable.reloadData()
     }
     
-    // Protocole functions
-    
-    func editCell(index: Int) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier:"addMemoryViewController") as!addMemoryViewController
-        vc.initator="vc2"
-        vc.memoryTitle = myMemoriesArray[index].memoryTitle
-        vc.memoryBody = myMemoriesArray[index].memoryBody
-        vc.memoryDate = myMemoriesArray[index].memoryDate
-        myMemoriesArray.remove(at: index)
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    func deleteCell(index: Int) {
-        myMemoriesArray.remove(at: index)
-    }
-    
+   
     // to reload data ater appear again
     override func viewWillAppear(_ animated: Bool) {
         myMemoriesTable.reloadData()
@@ -91,11 +75,13 @@ class myMemoriesViewController: UIViewController,UITableViewDataSource,UITableVi
         let memoryDB = Database.database().reference().child("memory").child((Auth.auth().currentUser?.uid)!)
         memoryDB.observe(.childAdded, with: { (snapshot) in
             let snapshotValue =  snapshot.value as!  Dictionary<String,String>
+            let memoryID = snapshotValue["memoryID"]!
             let memoryTitle = snapshotValue["memoryTitle"]!
             let memoryBody = snapshotValue["memoryBody"]!
             let memoryDate = snapshotValue["memoryDate"]!
             
             let oneMemory = Memory()
+            oneMemory.memoryID = memoryID
             oneMemory.memoryTitle = memoryTitle
             oneMemory.memoryBody = memoryBody
             oneMemory.memoryDate = memoryDate

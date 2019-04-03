@@ -26,6 +26,16 @@ class changePasswordViewController: UIViewController {
     @IBOutlet weak var updateBtn: UIButton!
     
 //------------------------------actions-------------------
+    
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    
     @IBAction func doneBtnPressed(_ sender: UIButton) {
         
         let user = ref.child("user").child((Auth.auth().currentUser?.uid)!)

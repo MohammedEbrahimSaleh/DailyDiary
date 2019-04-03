@@ -14,6 +14,7 @@ class showMemoryViewController: UIViewController {
 
     // variables
     var index : Int = 0
+    var memoryID = ""
     var memoryTitle = ""
     var memoryBody = ""
     
@@ -22,7 +23,7 @@ class showMemoryViewController: UIViewController {
     // actions
     
     @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+       self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func deleteBtnPressed(_ sender: UIBarButtonItem) {
@@ -30,12 +31,14 @@ class showMemoryViewController: UIViewController {
         let myAlert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this memeory ?", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Ok", style: .default){ action in
             
-//            let memoryDatabase = Database.database().reference().child("memory").child((Auth.auth().currentUser?.uid)!)
-//            memoryDatabase.key?.removeAll()
+            let memoryDatabase = Database.database().reference().child("memory").child((Auth.auth().currentUser?.uid)!)
+            memoryDatabase.child(self.memoryID).removeValue()
           
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier:"myMemoriesViewController") as!myMemoriesViewController
+            self.present(vc, animated: true, completion: nil)
             
             
-            self.dismiss(animated: true, completion: nil)
         }
         myAlert.addAction(okAction)
         let cancelAction = UIAlertAction(title: "cancel", style: .cancel){ action in }
@@ -48,7 +51,7 @@ class showMemoryViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier:"addMemoryViewController") as!addMemoryViewController
         vc.initator = "vc2"
-        vc.index = self.index
+        vc.memoryID = self.memoryID
         vc.memoryTitle = self.memoryTitle
         vc.memoryBody = self.memoryBody
 

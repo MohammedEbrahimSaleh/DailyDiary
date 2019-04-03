@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 import SVProgressHUD
 
 class myProfileViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate{
@@ -127,7 +128,7 @@ class myProfileViewController: UIViewController, UIImagePickerControllerDelegate
     // Alert actions functions
     func openGallary()
     {
-        picker!.allowsEditing = false
+        picker!.allowsEditing = true
         picker!.sourceType = UIImagePickerControllerSourceType.photoLibrary
         present(picker!, animated: true, completion: nil)
     }
@@ -142,9 +143,31 @@ class myProfileViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var chosenImage : UIImage?
+         if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
+         {chosenImage=originalImage}
+         else if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage
+        {chosenImage=editedImage}
+        if let selectedImage =  chosenImage {  
         profilePicture.contentMode = .scaleAspectFill
-        profilePicture.image = chosenImage
+        profilePicture.image = selectedImage
+            
+            
+            
+            
+           let storageRef = FIRStorage.storage().reference()
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
         dismiss(animated: true, completion: nil)
 
     }
